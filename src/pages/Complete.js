@@ -1,7 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Complete = () => {
-  return <h1>Complete</h1>;
+  return (
+    <section className='section'>
+      <h1 className='pageHeader'>Complete</h1>
+      <article className='article'>
+        <div className='buttonHolder'>
+          <Link to='/professional' className='btn'>
+            Back
+          </Link>
+          <Link to='/' className='btn btn-new'>
+            New
+          </Link>
+        </div>
+      </article>
+    </section>
+  );
 };
 
 export default Complete;

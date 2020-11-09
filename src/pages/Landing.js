@@ -1,10 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
-    <div>
-      <h1>Landing</h1>
-    </div>
+    <section className='section'>
+      <h1 className='pageHeader'>Create your own CV</h1>
+      <article className='article article-empty'>
+        <Link to='/personal' className='btn'>
+          Continue
+        </Link>
+      </article>
+    </section>
   );
 };
 
