@@ -41,6 +41,7 @@ aside {
   vertical-align: inherit;
   box-sizing: inherit;
   background: inherit;
+  display: flex;
 }
 
 ul {
@@ -71,4 +72,9 @@ input[type='submit'] {
 
 *:focus {
   outline: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
 }

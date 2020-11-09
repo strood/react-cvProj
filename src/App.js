@@ -14,27 +14,29 @@ import Error from './pages/Error';
 function App() {
   return (
     <Router>
-      {/* <Navbar /> */}
-      <Switch>
-        <Route exact path='/'>
-          <Landing />
-        </Route>
-        <Route path='/personal'>
-          <Personal />
-        </Route>
-        <Route path='/education'>
-          <Education />
-        </Route>
-        <Route path='/professional'>
-          <Professional />
-        </Route>
-        <Route path='/complete'>
-          <Complete />
-        </Route>
-        <Route path='*'>
-          <Error />
-        </Route>
-      </Switch>
+      <main className='main'>
+        {/* <Navbar /> */}
+        <Switch>
+          <Route exact path='/'>
+            <Landing />
+          </Route>
+          <Route path='/personal'>
+            <Personal />
+          </Route>
+          <Route path='/education'>
+            <Education />
+          </Route>
+          <Route path='/professional'>
+            <Professional />
+          </Route>
+          <Route path='/complete'>
+            <Complete />
+          </Route>
+          <Route path='*'>
+            <Error />
+          </Route>
+        </Switch>
+      </main>
     </Router>
   );
 }
