@@ -9,13 +9,11 @@ import Complete from './pages/Complete';
 import Error from './pages/Error';
 
 // import components
-// import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
       <main className='main'>
-        {/* <Navbar /> */}
         <Switch>
           <Route exact path='/'>
             <Landing />

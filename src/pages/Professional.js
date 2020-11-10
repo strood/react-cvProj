@@ -17,16 +17,14 @@ const Professional = () => {
           <TextInput label='Start Date' type='date' />
           <TextInput label='End Date' type='date' />
         </div>
-        <button onClick='#' className='btn'>
-          Add
-        </button>
+        <button className='btn'>Add</button>
         {/* Pile up the added jobs here */}
         <div className='buttonHolder'>
           <Link to='/education' className='btn'>
             Back
           </Link>
           <Link to='/complete' className='btn'>
-            Continue
+            Next
           </Link>
         </div>
       </article>

@@ -44,15 +44,25 @@
   display: inline-block;
 }
 
-.btn-new {
-  background-color: green;
+.btn-restart {
+  background-color: red;
 }
 
 .btn:hover {
   background: $white;
   color: $black;
 }
-
+.edDiv {
+  padding: 20px;
+}
+.removeEd {
+  display: flex;
+  height: 20%;
+  width: 15px;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 20px;
+}
 .buttonHolder {
   min-width: 360px;
   width: 40%;
@@ -110,4 +120,12 @@ textarea {
   height: 100vh;
   width: 100vw;
   background-color: grey;
+}
+
+.edInfo {
+  margin: 1%;
+  padding: 1%;
+  flex-direction: column;
+  border: 3px solid $dark-blue;
+  border-radius: $mainBorderRadius;
 }

@@ -1,4 +1,3 @@
-// import './img/TribeLogo.png'; // Example test for our file-loader module in webpack.common
 import './styles/index.scss';
 
 //React based imports below

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TextInput from '../components/TextInput';
+import { useGlobalContext } from '../context';
 
 const Education = () => {
+  const { education, setEducation } = useGlobalContext();
+
   return (
     <section className='section'>
       <h1 className='pageHeader'>Education</h1>
@@ -13,16 +16,35 @@ const Education = () => {
           <TextInput label='Start Date' type='date' />
           <TextInput label='End Date' type='date' />
         </div>
-        <button onClick='#' className='btn'>
-          Add
-        </button>
+        <button className='btn'>Add</button>
         {/* Pile up the added educations here */}
+
+        {education.length > 0 && (
+          <div className='edHolder'>
+            {education.map((ed) => {
+              return (
+                <div key={ed.id} className='edDiv'>
+                  <div className='edInfo'>
+                    <h3>{ed.school}</h3>
+                    <h4>{ed.disc}</h4>
+                    <div>
+                      <h5>
+                        {ed.start} - {ed.end}
+                      </h5>
+                    </div>
+                  </div>
+                  <button className='btn removeEd'>X</button>
+                </div>
+              );
+            })}
+          </div>
+        )}
         <div className='buttonHolder'>
           <Link to='/personal' className='btn'>
             Back
           </Link>
           <Link to='/professional' className='btn'>
-            Continue
+            Next
           </Link>
         </div>
       </article>
