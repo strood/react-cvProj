@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
+import Modal from '../components/Modal';
 
 const Complete = () => {
   const {
@@ -23,6 +24,7 @@ const Complete = () => {
 
   return (
     <>
+      {/* <Modal /> */}
       <section className='section'>
         <h1 className='pageHeader'>Complete</h1>
         <article className='article'>
@@ -74,6 +76,7 @@ const Complete = () => {
             <Link to='/professional' className='btn'>
               Back
             </Link>
+
             <Link
               onClick={() => resetLocal()}
               to='/'
