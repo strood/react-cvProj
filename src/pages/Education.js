@@ -2,13 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import { useGlobalContext } from '../context';
+import uniqid from 'uniqid';
 
 const Education = () => {
   const { education, setEducation } = useGlobalContext();
 
+  const addEducation = () => {
+    const newEd = {
+      id: uniqid(),
+      school: document.getElementById('School').value,
+      disc: document.getElementById('Discipline').value,
+      start: document.getElementById('Start Date').value,
+      end: document.getElementById('End Date').value,
+    };
+    setEducation([...education, newEd]);
+  };
+
+  const removeEducation = (id) => {
+    setEducation(education.filter((ed) => ed.id !== id));
+  };
+
   return (
     <section className='section'>
       <h1 className='pageHeader'>Education</h1>
+
       <article className='article'>
         <div className='form'>
           <TextInput label='School' type='text' />
@@ -16,8 +33,10 @@ const Education = () => {
           <TextInput label='Start Date' type='date' />
           <TextInput label='End Date' type='date' />
         </div>
-        <button className='btn'>Add</button>
-        {/* Pile up the added educations here */}
+
+        <button className='btn' onClick={() => addEducation()}>
+          Add
+        </button>
 
         {education.length > 0 && (
           <div className='edHolder'>
@@ -33,7 +52,12 @@ const Education = () => {
                       </h5>
                     </div>
                   </div>
-                  <button className='btn removeEd'>X</button>
+                  <button
+                    onClick={() => removeEducation(ed.id)}
+                    className='btn removeEd'
+                  >
+                    X
+                  </button>
                 </div>
               );
             })}

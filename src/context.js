@@ -1,32 +1,55 @@
 import React, { useState, useContext } from 'react';
+import uniqid from 'uniqid';
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [education, setEducation] = useState([
     {
-      id: '42564',
+      id: uniqid(),
       school: 'Holy Family',
       disc: 'Coloring',
+      start: '1996-09-01',
+      end: '2003-03-01',
+    },
+    {
+      id: uniqid(),
+      school: 'St Francis',
+      disc: 'Gym',
+      start: '1996-09-01',
+      end: '2003-03-01',
+    },
+    {
+      id: uniqid(),
+      school: 'University of Alberta',
+      disc: 'Economics - Political Science',
       start: '1996-09-01',
       end: '2003-03-01',
     },
   ]);
   const [professional, setProfessional] = useState([
     {
-      id: '3565',
+      id: uniqid(),
       company: 'Burger King',
       role: 'Grillmaster',
       desc: 'Manned the grill, trained the noobs, dunked the tenders.',
-      start: '20010-01-01',
+      start: '2000-01-01',
+      end: '2005-03-01',
+    },
+    {
+      id: uniqid(),
+      company: 'Best Buy',
+      role: 'Sticker Guy',
+      desc: 'Used my sticker gun to battle the forces of evil.',
+      start: '2010-01-01',
       end: '2015-03-01',
     },
   ]);
   const [personal, setPersonal] = useState({
-    first: '',
-    last: '',
-    email: '',
-    phone: '',
+    first: 'Jimbob',
+    last: 'Timms',
+    email: 'koster@gmail.com',
+    phone: '4038990531',
   });
   return (
     <AppContext.Provider
