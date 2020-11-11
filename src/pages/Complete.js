@@ -3,8 +3,24 @@ import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 
 const Complete = () => {
-  const { personal, education, professional } = useGlobalContext();
-  console.log(education.length);
+  const {
+    personal,
+    education,
+    professional,
+    setPersonal,
+    setEducation,
+    setProfessional,
+  } = useGlobalContext();
+
+  const resetLocal = () => {
+    localStorage.removeItem('Personal');
+    setPersonal({ first: '', last: '', email: '', phone: '' });
+    localStorage.removeItem('Professional');
+    setProfessional([]);
+    localStorage.removeItem('Education');
+    setEducation([]);
+  };
+
   return (
     <>
       <section className='section'>
@@ -58,7 +74,11 @@ const Complete = () => {
             <Link to='/professional' className='btn'>
               Back
             </Link>
-            <Link to='/' className='btn btn-restart'>
+            <Link
+              onClick={() => resetLocal()}
+              to='/'
+              className='btn btn-restart'
+            >
               Restart
             </Link>
           </div>

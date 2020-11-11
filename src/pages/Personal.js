@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 
@@ -10,9 +10,14 @@ const Personal = () => {
   const phoneVal = useRef(personal.phone);
 
   const { first, last, email, phone } = personal;
-  React.useEffect(() => {
+
+  useEffect(() => {
     firstNameVal.current.focus();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('Personal', JSON.stringify(personal));
+  });
 
   const infoUpdate = () => {
     setPersonal({

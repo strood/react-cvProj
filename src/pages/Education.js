@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import { useGlobalContext } from '../context';
@@ -6,6 +6,14 @@ import uniqid from 'uniqid';
 
 const Education = () => {
   const { education, setEducation } = useGlobalContext();
+
+  useEffect(() => {
+    document.getElementById('School').focus();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('Education', JSON.stringify(education));
+  });
 
   const addEducation = () => {
     const newEd = {

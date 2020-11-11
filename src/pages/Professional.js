@@ -1,4 +1,4 @@
-import React, { useEffect, componentDidMount } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import { useGlobalContext } from '../context';
@@ -6,6 +6,14 @@ import uniqid from 'uniqid';
 
 const Professional = () => {
   const { professional, setProfessional } = useGlobalContext();
+
+  useEffect(() => {
+    document.getElementById('Company').focus();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('Professional', JSON.stringify(professional));
+  });
 
   const addProfession = () => {
     const newPro = {
