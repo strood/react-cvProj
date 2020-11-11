@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import { useGlobalContext } from '../context';
 import uniqid from 'uniqid';
+import EditProfessional from '../components/EditProfessional';
+import PreviewProfessional from '../components/PreviewProfessional';
 
 const Professional = () => {
   const { professional, setProfessional } = useGlobalContext();
@@ -94,58 +96,28 @@ const Professional = () => {
         </button>
 
         {professional.length > 0 && (
-          <div className='edHolder'>
+          <div className='Holder'>
             {professional.map((job) => {
               return (
-                <div key={job.id} className='edDiv'>
+                <div key={job.id} className='Div'>
                   {job.id === editID ? (
-                    <div className='edInfo'>
-                      <input
-                        id='editCompany'
-                        value={editCompany}
-                        onChange={(e) => setEditCompany(e.target.value)}
-                      ></input>
-                      <input
-                        id='editRole'
-                        value={editRole}
-                        onChange={(e) => setEditRole(e.target.value)}
-                      ></input>
-                      <textarea
-                        id='editDesc'
-                        value={editDesc}
-                        onChange={(e) => setEditDesc(e.target.value)}
-                      ></textarea>
-                      <div className='textInput'>
-                        <label htmlFor={editStart}>Start Date</label>
-                        <input
-                          type='date'
-                          value={editStart}
-                          onChange={(e) => setEditStart(e.target.value)}
-                        />
-                      </div>
-                      <div className='textInput'>
-                        <label htmlFor={editEnd}>End Date</label>
-                        <input
-                          type='date'
-                          value={editEnd}
-                          onChange={(e) => setEditEnd(e.target.value)}
-                        />
-                      </div>
-                    </div>
+                    <EditProfessional
+                      editCompany={editCompany}
+                      setEditCompany={setEditCompany}
+                      editRole={editRole}
+                      setEditRole={setEditRole}
+                      editDesc={editDesc}
+                      setEditDesc={setEditDesc}
+                      editStart={editStart}
+                      setEditStart={setEditStart}
+                      editEnd={editEnd}
+                      setEditEnd={setEditEnd}
+                    />
                   ) : (
-                    <div className='edInfo'>
-                      <h3>{job.company}</h3>
-                      <h4>{job.role}</h4>
-                      <p>{job.desc}</p>
-                      <div>
-                        <h5>
-                          {job.start} - {job.end}
-                        </h5>
-                      </div>
-                    </div>
+                    <PreviewProfessional {...job} />
                   )}
 
-                  <div className='edDivButtonHolder'>
+                  <div className='DivButtonHolder'>
                     <button
                       onClick={() => removeProfession(job.id)}
                       className='btn removeEd'

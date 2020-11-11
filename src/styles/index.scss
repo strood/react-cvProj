@@ -3,6 +3,8 @@
 // Import vars
 @import './vars/colors';
 @import './vars/vars';
+@import './final';
+@import './buttons';
 
 #root {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
@@ -14,12 +16,6 @@
   background-color: $dark-blue;
   padding-top: 5em;
 }
-
-.pageHeader {
-  font-size: 3em;
-  padding: 1em;
-}
-
 .main {
   justify-content: center;
   align-content: center;
@@ -29,36 +25,17 @@
   height: 90%;
   overflow: auto;
 }
-.btn {
-  text-transform: uppercase;
-  letter-spacing: $mainSpacing;
-  border: 2px solid $dark-blue;
-  background-color: $blue;
-  color: $white;
-  padding: 0.45rem 0.8rem;
-  display: inline-block;
-  transition: $mainTransition;
-  cursor: pointer;
-  font-size: 0.8rem;
-  border-radius: $mainBorderRadius;
-  display: inline-block;
-}
 
-.btn-restart {
-  background-color: red;
-}
-
-.btn:hover {
-  background: $white;
-  color: $black;
-}
-
-.buttonHolder {
+.article {
+  flex-direction: column;
+  align-items: center;
   min-width: 360px;
   width: 40%;
-  margin-top: 35px;
-  margin-bottom: 20px;
-  justify-content: space-between;
+}
+
+.article-empty {
+  height: 90%;
+  justify-content: center;
 }
 
 .section {
@@ -67,12 +44,35 @@
   width: 100%;
 }
 
+.pageHeader {
+  font-size: 3em;
+  padding: 1em;
+}
+
 .form {
   flex-wrap: wrap;
   height: 100%;
   justify-content: center;
   flex-direction: column;
 }
+
+.Info {
+  margin: 1%;
+  padding: 1%;
+  flex-direction: column;
+  border: 3px solid $dark-blue;
+  border-radius: $mainBorderRadius;
+}
+.Div {
+  flex-direction: column;
+  padding: 20px;
+}
+
+.Holder {
+  flex-direction: column;
+}
+
+/// Text
 
 input,
 textarea {
@@ -89,17 +89,7 @@ textarea {
   justify-content: space-between;
 }
 
-.article {
-  flex-direction: column;
-  align-items: center;
-  min-width: 360px;
-  width: 40%;
-}
-
-.article-empty {
-  height: 90%;
-  justify-content: center;
-}
+// Modal
 
 .hidden {
   visibility: hidden;
@@ -111,80 +101,4 @@ textarea {
   height: 100vh;
   width: 100vw;
   background-color: grey;
-}
-
-.edInfo {
-  margin: 1%;
-  padding: 1%;
-  flex-direction: column;
-  border: 3px solid $dark-blue;
-  border-radius: $mainBorderRadius;
-}
-.edDiv {
-  flex-direction: column;
-  padding: 20px;
-}
-
-.edDivButtonHolder {
-  justify-content: space-between;
-  padding: 1%;
-}
-.removeEd {
-  display: flex;
-  height: 20%;
-  width: 15px;
-  align-items: center;
-  font-weight: bolder;
-  font-size: 20px;
-  background-color: indianred;
-}
-.edHolder {
-  flex-direction: column;
-}
-
-.final {
-  flex-direction: column;
-  width: 550px;
-  border: 1px solid $black;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 5px 5px 15px 5px #000000;
-  .top {
-    flex-direction: column;
-    border-bottom: 3px solid black;
-    justify-content: space-around;
-    padding: 1%;
-  }
-  .edHolder {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    border-bottom: 3px solid black;
-    padding: 0.5em;
-    .edTitle {
-      text-decoration: underline;
-    }
-    .ed {
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      border-bottom: 1px solid grey;
-      padding: 1%;
-    }
-  }
-  .proHolder {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0.5em;
-    width: 100%;
-    .proTitle {
-      text-decoration: underline;
-    }
-    .pro {
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      padding: 1%;
-    }
-  }
 }

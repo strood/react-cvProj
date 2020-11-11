@@ -1,0 +1,46 @@
+.final {
+  flex-direction: column;
+  width: 550px;
+  border: 1px solid $black;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+  .top {
+    flex-direction: column;
+    border-bottom: 3px solid black;
+    justify-content: space-around;
+    padding: 1%;
+  }
+  .edHolder {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 3px solid black;
+    padding: 0.5em;
+    .edTitle {
+      text-decoration: underline;
+    }
+    .ed {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 1px solid grey;
+      padding: 1%;
+    }
+  }
+  .proHolder {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5em;
+    width: 100%;
+    .proTitle {
+      text-decoration: underline;
+    }
+    .pro {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 1%;
+    }
+  }
+}

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import TextInput from '../components/TextInput';
 import { useGlobalContext } from '../context';
 import uniqid from 'uniqid';
+import PreviewEducation from '../components/PreviewEducation';
+import EditEducation from '../components/EditEducation';
 
 const Education = () => {
   const { education, setEducation } = useGlobalContext();
@@ -86,53 +88,26 @@ const Education = () => {
         </button>
 
         {education.length > 0 && (
-          <div className='edHolder'>
+          <div className='Holder'>
             {education.map((ed) => {
               return (
-                <div key={ed.id} className='edDiv'>
+                <div key={ed.id} className='Div'>
                   {ed.id === editID ? (
-                    <div className='edInfo'>
-                      <input
-                        id='editSchool'
-                        value={editSchool}
-                        onChange={(e) => setEditSchool(e.target.value)}
-                      ></input>
-                      <input
-                        id='editDisc'
-                        value={editDisc}
-                        onChange={(e) => setEditDisc(e.target.value)}
-                      ></input>
-                      <div className='textInput'>
-                        <label htmlFor={editStart}>Start Date</label>
-                        <input
-                          type='date'
-                          value={editStart}
-                          onChange={(e) => setEditStart(e.target.value)}
-                        />
-                      </div>
-                      <div className='textInput'>
-                        <label htmlFor={editEnd}>End Date</label>
-                        <input
-                          type='date'
-                          value={editEnd}
-                          onChange={(e) => setEditEnd(e.target.value)}
-                        />
-                      </div>
-                    </div>
+                    <EditEducation
+                      editSchool={editSchool}
+                      setEditSchool={setEditSchool}
+                      editDisc={editDisc}
+                      setEditDisc={setEditDisc}
+                      editStart={editStart}
+                      setEditStart={setEditStart}
+                      editEnd={editEnd}
+                      setEditEnd={setEditEnd}
+                    />
                   ) : (
-                    <div className='edInfo'>
-                      <h3>{ed.school}</h3>
-                      <h4>{ed.disc}</h4>
-
-                      <div>
-                        <h5>
-                          {ed.start} - {ed.end}
-                        </h5>
-                      </div>
-                    </div>
+                    <PreviewEducation {...ed} />
                   )}
 
-                  <div className='edDivButtonHolder'>
+                  <div className='DivButtonHolder'>
                     <button
                       onClick={() => removeEducation(ed.id)}
                       className='btn removeEd'

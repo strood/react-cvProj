@@ -4,6 +4,8 @@ Enter your info to generate a personalized CV.
 
 Made using react and react router.
 
+## [Live Demo](https://create-a-cv.netlify.app/) - Check it out!
+
 ---
 
 ### Setup basic project structure

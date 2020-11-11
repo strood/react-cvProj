@@ -1,0 +1,45 @@
+.btn {
+  text-transform: uppercase;
+  letter-spacing: $mainSpacing;
+  border: 2px solid $dark-blue;
+  background-color: $blue;
+  color: $white;
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: $mainTransition;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: $mainBorderRadius;
+  display: inline-block;
+}
+
+.btn-restart {
+  background-color: red;
+}
+
+.btn:hover {
+  background: $white;
+  color: $black;
+}
+
+.buttonHolder {
+  min-width: 360px;
+  width: 40%;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.DivButtonHolder {
+  justify-content: space-between;
+  padding: 1%;
+}
+.removeEd {
+  display: flex;
+  height: 20%;
+  width: 15px;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 20px;
+  background-color: indianred;
+}
