@@ -6,7 +6,6 @@
   color: $white;
   padding: 0.45rem 0.8rem;
   display: inline-block;
-  transition: $mainTransition;
   cursor: pointer;
   font-size: 0.8rem;
   border-radius: $mainBorderRadius;
@@ -14,7 +13,7 @@
 }
 
 .btn-restart {
-  background-color: red;
+  background-color: indianred;
 }
 
 .btn:hover {
@@ -42,4 +41,14 @@
   font-weight: bolder;
   font-size: 20px;
   background-color: indianred;
+}
+
+.edit-btn {
+  background-color: khaki;
+  color: $black;
+}
+
+.add-btn {
+  background-color: rgb(50, 135, 50);
+  //   color: $black;
 }

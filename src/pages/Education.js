@@ -83,7 +83,7 @@ const Education = () => {
           <TextInput label='End Date' type='date' />
         </div>
 
-        <button className='btn' onClick={() => addEducation()}>
+        <button className='btn add-btn' onClick={() => addEducation()}>
           Add
         </button>
 
@@ -114,14 +114,21 @@ const Education = () => {
                     >
                       X
                     </button>
-                    <button
-                      onClick={() =>
-                        editID === ed.id ? updateEd(ed.id) : editItem(ed.id)
-                      }
-                      className=' btn  edit-btn'
-                    >
-                      {editID === ed.id ? <p>save</p> : <p>edit</p>}
-                    </button>
+                    {editID === ed.id ? (
+                      <button
+                        className=' btn  add-btn'
+                        onClick={() => updateEd(ed.id)}
+                      >
+                        <p>save</p>
+                      </button>
+                    ) : (
+                      <button
+                        className=' btn  edit-btn'
+                        onClick={() => editItem(ed.id)}
+                      >
+                        <p>edit</p>
+                      </button>
+                    )}
                   </div>
                 </div>
               );
@@ -130,10 +137,10 @@ const Education = () => {
         )}
         <div className='buttonHolder'>
           <Link to='/personal' className='btn'>
-            Back
+            {'<'} Back
           </Link>
           <Link to='/professional' className='btn'>
-            Next
+            Next {'>'}
           </Link>
         </div>
       </article>

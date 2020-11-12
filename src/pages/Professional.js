@@ -91,7 +91,7 @@ const Professional = () => {
           <TextInput label='Start Date' type='date' />
           <TextInput label='End Date' type='date' />
         </div>
-        <button className='btn' onClick={() => addProfession()}>
+        <button className='btn add-btn' onClick={() => addProfession()}>
           Add
         </button>
 
@@ -124,14 +124,21 @@ const Professional = () => {
                     >
                       X
                     </button>
-                    <button
-                      onClick={() =>
-                        editID === job.id ? updatePro(job.id) : editItem(job.id)
-                      }
-                      className=' btn  edit-btn'
-                    >
-                      {editID === job.id ? <p>save</p> : <p>edit</p>}
-                    </button>
+                    {editID === job.id ? (
+                      <button
+                        className=' btn  add-btn'
+                        onClick={() => updatePro(job.id)}
+                      >
+                        <p>save</p>
+                      </button>
+                    ) : (
+                      <button
+                        className=' btn  edit-btn'
+                        onClick={() => editItem(job.id)}
+                      >
+                        <p>edit</p>
+                      </button>
+                    )}
                   </div>
                 </div>
               );
@@ -141,10 +148,10 @@ const Professional = () => {
 
         <div className='buttonHolder'>
           <Link to='/education' className='btn'>
-            Back
+            {'<'} Back
           </Link>
           <Link to='/complete' className='btn'>
-            Next
+            Next {'>'}
           </Link>
         </div>
       </article>

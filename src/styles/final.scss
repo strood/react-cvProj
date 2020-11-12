@@ -1,4 +1,5 @@
 .final {
+  transform: none;
   flex-direction: column;
   width: 550px;
   border: 1px solid $black;
@@ -42,5 +43,31 @@
       align-items: center;
       padding: 1%;
     }
+  }
+}
+
+// Modal
+
+.hidden {
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 93%;
+  background-color: grey;
+  justify-content: center;
+}
+
+.modalMessage {
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  div {
+    width: 100%;
+    padding: 1%;
+    justify-content: space-around;
   }
 }

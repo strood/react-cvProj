@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 import Modal from '../components/Modal';
 
 const Complete = () => {
+  const [modal, setModal] = useState(false);
   const {
     personal,
     education,
@@ -24,7 +25,7 @@ const Complete = () => {
 
   return (
     <>
-      {/* <Modal /> */}
+      <Modal modal={modal} resetLocal={resetLocal} setModal={setModal} />
       <section className='section'>
         <h1 className='pageHeader'>Complete</h1>
         <article className='article'>
@@ -74,16 +75,11 @@ const Complete = () => {
           </div>
           <div className='buttonHolder'>
             <Link to='/professional' className='btn'>
-              Back
+              {'<'} Back
             </Link>
-
-            <Link
-              onClick={() => resetLocal()}
-              to='/'
-              className='btn btn-restart'
-            >
+            <button onClick={() => setModal(true)} className='btn btn-restart'>
               Restart
-            </Link>
+            </button>
           </div>
         </article>
       </section>

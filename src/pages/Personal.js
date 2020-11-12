@@ -63,7 +63,7 @@ const Personal = () => {
           />
         </div>
         <Link to='/education' className='btn'>
-          Next
+          Next {'>'}
         </Link>
       </article>
     </section>

@@ -7,7 +7,7 @@ const Landing = () => {
       <h1 className='pageHeader'>Create-A-CV</h1>
       <article className='article article-empty'>
         <Link to='/personal' className='btn'>
-          Continue
+          Continue {'>'}
         </Link>
       </article>
     </section>
